@@ -1,0 +1,32 @@
+<mvc:View controllerName="EuroCareDoctor.controller.Main" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc"
+	displayBlock="true" xmlns="sap.m">
+	<App>
+		<pages>
+			<Page title="{i18n>title}">
+				<TileContainer 
+					id="myTileContainer" 
+					tileDelete="handleTileDelete">
+					<StandardTile 
+						id="oTile1" 
+						icon="sap-icon://feed" 
+						title="ChatBot" 
+						info="" 
+						infoState="Success" 
+						press="onChatBotClicked"/>
+					<StandardTile id="oTile2" 
+						icon="sap-icon://favorite" 
+						title="Patients" 
+						info="Ranking" 
+						infoState="Error" 
+						press="handleListItemPress"/>
+					<StandardTile id="oTile3" 
+						icon="sap-icon://pie-chart" 
+						title="Reports" 
+						info="Revenue by route" 
+						infoState="Error"
+						press="handleListItemPress"/>
+					</TileContainer>
+				</Page>
+			</pages>
+		</App>
+	</mvc:View>
