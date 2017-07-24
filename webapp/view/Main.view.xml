@@ -2,7 +2,39 @@
 	displayBlock="true" xmlns="sap.m">
 	<App>
 		<pages>
-			<Page title="{i18n>title}">
+			<Page title="EuroCare Doctors">
+				<!--<SlideTile class="sapUiTinyMarginBegin sapUiTinyMarginTop">-->
+				<!--	<tiles>-->
+				<!--		<GenericTile-->
+				<!--			backgroundImage="img/NewsImage2.png"-->
+				<!--			frameType="TwoByOne" press="pressOnTileOne">-->
+				<!--			<tileContent>-->
+				<!--				<TileContent footer="August 1st, 2017">-->
+				<!--					<content>-->
+				<!--						<NewsContent-->
+				<!--							contentText="João teve bom rendimento na caminhada hoje"-->
+				<!--							subheader="Today, Irene">-->
+				<!--						</NewsContent>-->
+				<!--					</content>-->
+				<!--				</TileContent>-->
+				<!--			</tileContent>-->
+				<!--		</GenericTile>-->
+				<!--		<GenericTile-->
+				<!--			backgroundImage="img/NewsImage1.png"-->
+				<!--			frameType="TwoByOne" press="pressOnTileTwo">-->
+				<!--			<tileContent>-->
+				<!--				<TileContent footer="August 21, 2016">-->
+				<!--					<content>-->
+				<!--						<NewsContent-->
+				<!--							contentText="Wind Map: Monitoring Real-Time and Forecasted Wind Conditions across the Globe"-->
+				<!--							subheader="Today, SAP News">-->
+				<!--						</NewsContent>-->
+				<!--					</content>-->
+				<!--				</TileContent>-->
+				<!--			</tileContent>-->
+				<!--		</GenericTile>-->
+				<!--	</tiles>-->
+				<!--</SlideTile>-->
 				<TileContainer 
 					id="myTileContainer" 
 					tileDelete="handleTileDelete">
@@ -10,19 +42,19 @@
 						id="oTile1" 
 						icon="sap-icon://feed" 
 						title="ChatBot" 
-						info="" 
+						info="3 new questions" 
 						infoState="Success" 
 						press="onChatBotClicked"/>
 					<StandardTile id="oTile2" 
 						icon="sap-icon://favorite" 
 						title="Patients" 
-						info="Ranking" 
+						info="" 
 						infoState="Error" 
 						press="handleListItemPress"/>
 					<StandardTile id="oTile3" 
 						icon="sap-icon://pie-chart" 
 						title="Reports" 
-						info="Revenue by route" 
+						info="3 patients to review" 
 						infoState="Error"
 						press="handleListItemPress"/>
 					</TileContainer>

@@ -5,68 +5,138 @@
 	xmlns="sap.m" 
 	controllerName="EuroCareDoctor.controller.ChatBot"
 	xmlns:html="http://www.w3.org/1999/xhtml">
-	<l:VerticalLayout
-		class="navigationExamples"
-		width="100%" >
-		<l:content>
- 
-			<Panel>
-				<headerToolbar>
-					<Toolbar>
-						<Title level="H2" text="Variable width" />
-					</Toolbar>
-				</headerToolbar>
- 
-			<FlexBox
-				class="ne-flexbox1"
-				width="95%"
-				renderType="List"
-				justifyContent="Center"
-				alignItems="Center">
-				<items>
-					<core:HTML content="&lt;a href='javascript:return false;'&gt;Item 1&lt;/a&gt;" />
-					<core:HTML content="&lt;a href='javascript:return false;'&gt;Long item 2&lt;/a&gt;" />
-					<core:HTML content="&lt;a href='javascript:return false;'&gt;Item 3&lt;/a&gt;" />
-				</items>
-			</FlexBox>
-			</Panel>
- 
-			<Panel>
-				<headerToolbar>
-					<Toolbar>
-						<Title level="H2" text="Same width, transition effect" />
-					</Toolbar>
-				</headerToolbar>
- 
-				<FlexBox
-					class="ne-flexbox2"
-					width="95%"
-					renderType="List"
-					justifyContent="SpaceBetween"
-					alignItems="Center">
-					<items>
-						<core:HTML
-							content="&lt;a href='javascript:return false;'&gt;Item 1&lt;/a&gt;">
-							<core:layoutData>
-								<FlexItemData growFactor="1" />
-							</core:layoutData>
-						</core:HTML>
-						<core:HTML
-							content="&lt;a href='javascript:return false;'&gt;Long item 2&lt;/a&gt;">
-							<core:layoutData>
-								<FlexItemData growFactor="1" />
-							</core:layoutData>
-						</core:HTML>
-						<core:HTML
-							content="&lt;a href='javascript:return false;'&gt;Item 3&lt;/a&gt;">
-							<core:layoutData>
-								<FlexItemData growFactor="1" />
-							</core:layoutData>
-						</core:HTML>
-					</items>
-				</FlexBox>
- 
-			</Panel>
-		</l:content>
-	</l:VerticalLayout>
+	<App>
+		<pages>
+			<Page title="Eurocare Chatbot"
+		        showNavButton="true"
+		        navButtonPress="handleNavButtonPress">
+				<content>
+					<l:VerticalLayout
+						class="navigationExamples"
+						width="100%" >
+						<l:content>
+				 
+							<!--<Panel>-->
+							<!--	<headerToolbar>-->
+							<!--		<Toolbar>-->
+							<!--			<Title level="H2" text="Variable width" />-->
+							<!--		</Toolbar>-->
+							<!--	</headerToolbar>-->
+				 
+							<!--<FlexBox-->
+							<!--	class="ne-flexbox1"-->
+							<!--	width="95%"-->
+							<!--	renderType="List"-->
+							<!--	justifyContent="Center"-->
+							<!--	alignItems="Center">-->
+							<!--	<items>-->
+							<!--		<core:HTML content="&lt;a href='javascript:return false;'&gt;Item 1&lt;/a&gt;" />-->
+							<!--		<core:HTML content="&lt;a href='javascript:return false;'&gt;Long item 2&lt;/a&gt;" />-->
+							<!--		<core:HTML content="&lt;a href='javascript:return false;'&gt;Item 3&lt;/a&gt;" />-->
+							<!--	</items>-->
+							<!--</FlexBox>-->
+							<!--</Panel>-->
+				 
+							<Panel>
+								<headerToolbar>
+									<Toolbar>
+										<Title level="H2" class="ne-title" text="Open Questions" />
+									</Toolbar>
+								</headerToolbar>
+								<FlexBox
+									class="ne-flexbox2"
+									width="95%"
+									renderType="List"
+									justifyContent="SpaceBetween"
+									alignItems="Center"	>
+									<items>
+										<core:HTML
+											content="&lt;a href='javascript:return false;'&gt;Para o que servem os remédios?&lt;/a&gt;">
+											<core:layoutData>
+												<FlexItemData growFactor="1" press="handleQuestionPressed"/>
+											</core:layoutData>
+										</core:HTML>
+										<core:HTML
+											content="&lt;a href='javascript:return false;'&gt;Também terei Alzheimer?&lt;/a&gt;">
+											<core:layoutData>
+												<FlexItemData growFactor="1" press="handleQuestionPressed" />
+											</core:layoutData>
+										</core:HTML>
+										<core:HTML
+											content="&lt;a href='javascript:return false;'&gt;Como devo tratar meu familiar agora?&lt;/a&gt;">
+											<core:layoutData>
+												<FlexItemData growFactor="1" />
+											</core:layoutData>
+										</core:HTML>
+									</items>
+								</FlexBox>
+								<FlexBox
+									class="ne-flexbox2"
+									width="95%"
+									renderType="List"
+									justifyContent="SpaceBetween"
+									alignItems="Center">
+									<items>
+										<core:HTML
+											content="&lt;a href='javascript:return false;'&gt;Para o que servem os remédios?&lt;/a&gt;">
+											<core:layoutData>
+												<FlexItemData growFactor="1" />
+											</core:layoutData>
+										</core:HTML>
+										<core:HTML
+											content="&lt;a href='javascript:return false;'&gt;Também terei Alzheimer?&lt;/a&gt;">
+											<core:layoutData>
+												<FlexItemData growFactor="1" />
+											</core:layoutData>
+										</core:HTML>
+										<core:HTML
+											content="&lt;a href='javascript:return false;'&gt;Como devo tratar meu familiar agora?&lt;/a&gt;">
+											<core:layoutData>
+												<FlexItemData growFactor="1" />
+											</core:layoutData>
+										</core:HTML>
+									</items>
+								</FlexBox>
+							</Panel>
+							
+							<Panel>
+								<headerToolbar>
+									<Toolbar>
+										<Title level="H2" class="ne-title" text="Answered Questions" />
+									</Toolbar>
+								</headerToolbar>
+								<FlexBox
+									class="ne-flexbox1"
+									width="95%"
+									renderType="List"
+									justifyContent="SpaceBetween"
+									alignItems="Center">
+									<items>
+										<core:HTML
+											content="&lt;a href='javascript:return false;'&gt;Para o que servem os remédios?&lt;/a&gt;">
+											<core:layoutData>
+												<FlexItemData growFactor="1" />
+											</core:layoutData>
+										</core:HTML>
+										<core:HTML
+											content="&lt;a href='javascript:return false;'&gt;Também terei Alzheimer?&lt;/a&gt;">
+											<core:layoutData>
+												<FlexItemData growFactor="1"/>
+											</core:layoutData>
+										</core:HTML>
+										<core:HTML
+											content="&lt;a href='javascript:return false;'&gt;Como devo tratar meu familiar agora?&lt;/a&gt;">
+											<core:layoutData>
+												<FlexItemData growFactor="1" />
+											</core:layoutData>
+										</core:HTML>
+									</items>
+								</FlexBox>
+							</Panel>
+						</l:content>
+					</l:VerticalLayout>
+				</content>
+			</Page>
+		</pages>
+	</App>
 </mvc:View>

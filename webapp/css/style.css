@@ -18,10 +18,10 @@
 	padding: 0.4em 1.3em;
 	list-style-type: none;
 	text-align: center;
-	background-color: #193441;
+	background-color: gray;
 }
 .navigationExamples .ne-flexbox1 li:hover {
-	background-color: orange;
+	background-color: gray;
 }
 .navigationExamples .ne-flexbox2 {
 	margin: 0.4em 5%;
@@ -37,15 +37,19 @@
 	text-align: center;
 	background-color: #193441;
 	padding: 0.4em;
-	-webkit-transition: width 0.5s ease-out, background-color 0.5s ease-out;
+	-webkit-transition: width 0.5s ease-out, background-color 0.5s ease-out, font-size 0.5s ease-out;
 }
 .navigationExamples .ne-flexbox2 li:hover {
 	width: 35%;
 	background-color: orange;
+	font-size: 1.5em;
 }
 .navigationExamples .ne-flexbox1 li a,
 .navigationExamples .ne-flexbox2 li a {
 	color: #fff;
 	text-decoration: none;
 	font-size: 0.7em;
+}
+.navigationExamples .ne-title {
+	padding-bottom: 1em;
 }
