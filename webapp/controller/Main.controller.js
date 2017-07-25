@@ -15,6 +15,10 @@ sap.ui.define([
 		
 		onChatBotClicked: function () {
 			sap.ui.getCore().byId("app").to("idChatBot");
+		},
+		
+		handlePatientListPress: function () {
+			sap.ui.getCore().byId("app").to("idPatientList"); 
 		}
 		
 	});

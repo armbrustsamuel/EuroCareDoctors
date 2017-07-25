@@ -1,9 +1,9 @@
 <mvc:View 
+	controllerName="EuroCareDoctor.controller.ChatBot"
 	xmlns:l="sap.ui.layout"
 	xmlns:core="sap.ui.core" 
 	xmlns:mvc="sap.ui.core.mvc" 
 	xmlns="sap.m" 
-	controllerName="EuroCareDoctor.controller.ChatBot"
 	xmlns:html="http://www.w3.org/1999/xhtml">
 	<App>
 		<pages>
@@ -43,6 +43,7 @@
 										<Title level="H2" class="ne-title" text="Open Questions" />
 									</Toolbar>
 								</headerToolbar>
+								<Button press="handleQuestionPressed" />
 								<FlexBox
 									class="ne-flexbox2"
 									width="95%"
@@ -59,7 +60,7 @@
 										<core:HTML
 											content="&lt;a href='javascript:return false;'&gt;Também terei Alzheimer?&lt;/a&gt;">
 											<core:layoutData>
-												<FlexItemData growFactor="1" press="handleQuestionPressed" />
+												<FlexItemData growFactor="1" />
 											</core:layoutData>
 										</core:HTML>
 										<core:HTML
@@ -90,7 +91,7 @@
 											</core:layoutData>
 										</core:HTML>
 										<core:HTML
-											content="&lt;a href='javascript:return false;'&gt;Como devo tratar meu familiar agora?&lt;/a&gt;">
+											content="&lt;a href='javascript:return false;'&gt;Como devo tratar meu familiar agora?&lt;/a&gt; ">
 											<core:layoutData>
 												<FlexItemData growFactor="1" />
 											</core:layoutData>
@@ -136,6 +137,16 @@
 						</l:content>
 					</l:VerticalLayout>
 				</content>
+				<footer>
+				    <OverflowToolbar>
+				        <ToolbarSpacer/>
+				        <Image
+            		    	visible="true"
+            		    	width="80px"
+            		    	height="40px"
+            		    	src="/webapp/img/SAP_2011_logo.svg"/>
+				    </OverflowToolbar>
+        		</footer>
 			</Page>
 		</pages>
 	</App>

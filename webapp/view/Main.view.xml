@@ -1,64 +1,52 @@
-<mvc:View controllerName="EuroCareDoctor.controller.Main" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc"
+<mvc:View 
+	controllerName="EuroCareDoctor.controller.Main" 
+	xmlns:core="sap.ui.core"
+	xmlns:html="http://www.w3.org/1999/xhtml" 
+	xmlns:mvc="sap.ui.core.mvc"
 	displayBlock="true" xmlns="sap.m">
 	<App>
 		<pages>
 			<Page title="EuroCare Doctors">
-				<!--<SlideTile class="sapUiTinyMarginBegin sapUiTinyMarginTop">-->
-				<!--	<tiles>-->
-				<!--		<GenericTile-->
-				<!--			backgroundImage="img/NewsImage2.png"-->
-				<!--			frameType="TwoByOne" press="pressOnTileOne">-->
-				<!--			<tileContent>-->
-				<!--				<TileContent footer="August 1st, 2017">-->
-				<!--					<content>-->
-				<!--						<NewsContent-->
-				<!--							contentText="João teve bom rendimento na caminhada hoje"-->
-				<!--							subheader="Today, Irene">-->
-				<!--						</NewsContent>-->
-				<!--					</content>-->
-				<!--				</TileContent>-->
-				<!--			</tileContent>-->
-				<!--		</GenericTile>-->
-				<!--		<GenericTile-->
-				<!--			backgroundImage="img/NewsImage1.png"-->
-				<!--			frameType="TwoByOne" press="pressOnTileTwo">-->
-				<!--			<tileContent>-->
-				<!--				<TileContent footer="August 21, 2016">-->
-				<!--					<content>-->
-				<!--						<NewsContent-->
-				<!--							contentText="Wind Map: Monitoring Real-Time and Forecasted Wind Conditions across the Globe"-->
-				<!--							subheader="Today, SAP News">-->
-				<!--						</NewsContent>-->
-				<!--					</content>-->
-				<!--				</TileContent>-->
-				<!--			</tileContent>-->
-				<!--		</GenericTile>-->
-				<!--	</tiles>-->
-				<!--</SlideTile>-->
-				<TileContainer 
-					id="myTileContainer" 
-					tileDelete="handleTileDelete">
-					<StandardTile 
-						id="oTile1" 
-						icon="sap-icon://feed" 
-						title="ChatBot" 
-						info="3 new questions" 
-						infoState="Success" 
-						press="onChatBotClicked"/>
-					<StandardTile id="oTile2" 
-						icon="sap-icon://favorite" 
-						title="Patients" 
-						info="" 
-						infoState="Error" 
-						press="handleListItemPress"/>
-					<StandardTile id="oTile3" 
-						icon="sap-icon://pie-chart" 
-						title="Reports" 
-						info="3 patients to review" 
-						infoState="Error"
-						press="handleListItemPress"/>
-					</TileContainer>
-				</Page>
-			</pages>
-		</App>
-	</mvc:View>
+				<content>
+					<TileContainer 
+						id="myTileContainer" 
+						tileDelete="handleTileDelete">
+						<StandardTile 
+							id="oTile1" 
+							class="tile_card"
+							icon="sap-icon://feed" 
+							title="ChatBot" 
+							info="4 new questions" 
+							infoState="Success" 
+							press="onChatBotClicked"/>
+						<!--<StandardTile id="oTile2" -->
+						<!--	icon="sap-icon://favorite" -->
+						<!--	title="Patients" -->
+						<!--	info="" -->
+						<!--	infoState="Error" -->
+						<!--	press="handleListItemPress"/>-->
+						<StandardTile id="oTile3" 
+							class="tile_card"
+							icon="sap-icon://customer"
+							title="Patient" 
+							info="3 patients to review" 
+							infoState="Error"
+							press="handlePatientListPress"/>
+						</TileContainer>
+				</content>
+				<footer>
+				    <OverflowToolbar>
+				    	<!--<core:Icon-->
+				    	<!--	src="sap-icon://user-settings"/>-->
+				        <ToolbarSpacer/>
+				        <Image
+            		    	visible="true"
+            		    	width="80px"
+            		    	height="40px"
+            		    	src="/webapp/img/SAP_2011_logo.svg"/>
+				    </OverflowToolbar>
+        		</footer>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

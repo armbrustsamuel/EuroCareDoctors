@@ -1,0 +1,110 @@
+<mvc:View 
+	controllerName="EuroCareDoctor.controller.PatientList"
+	xmlns:core="sap.ui.core"
+	xmlns:mvc="sap.ui.core.mvc" 
+	xmlns="sap.m" 
+	xmlns:l="sap.ui.layout"
+	xmlns:html="http://www.w3.org/1999/xhtml">
+	<App>
+		<pages>
+			<Page title="Patient List"
+				class="title-enhanced"
+				showNavButton="true"
+		        navButtonPress="handleNavButtonPress">
+				<content>
+					<l:VerticalLayout
+						width="100%" >
+						<l:content>
+							<Panel>
+								<headerToolbar>
+									<Toolbar>
+										<Title level="H2" class="ne-title" text="Instable" />
+									</Toolbar>
+								</headerToolbar>
+								<FlexBox
+									class="ne-flexbox2"
+									width="95%"
+									justifyContent="SpaceBetween"
+									alignItems="Center"	>
+									<items>
+										<l:VerticalLayout>
+											<Image
+												id="userId"
+												class="circular--square alert tile_card"
+												width="250px"
+												height="250px"
+												src="/webapp/img/people/person_4.jpg"/>
+											<Text 
+												text="Name:"
+												textAlign="Center"/>
+											<Text 
+												text="Idade:"
+												textAlign="Center"/>
+										</l:VerticalLayout>
+									</items>
+								</FlexBox>
+							</Panel>   
+							<Panel>
+								<headerToolbar>
+									<Toolbar>
+										<Title level="H2" class="ne-title" text="Stable" />
+									</Toolbar>
+								</headerToolbar>
+								<FlexBox
+									class="ne-flexbox2"
+									width="95%"
+									justifyContent="SpaceBetween"
+									alignItems="Center"	>
+									<items>
+										<l:VerticalLayout>
+											<Image
+												class="circular--square tile_card"
+												width="250px"
+												height="250px"
+												src="/webapp/img/people/person_1.jpg"/>
+											<Text 
+												text="Name:"
+												textAlign="Center"/>
+											<Text 
+												text="Idade:"
+												textAlign="Center"/>
+										</l:VerticalLayout>
+										
+										<!-- TO BE DELETED WHEN AUTOMATICALLY added-->
+										<l:VerticalLayout>
+											<Image
+												class="circular--square tile_card"
+												width="250px"
+												height="250px"
+												src="/webapp/img/people/person_2.jpg"/>
+											<Text 
+												text="Name:"
+												textAlign="Center"/>
+											<Text 
+												text="Idade:"
+												textAlign="Center"/>
+										</l:VerticalLayout>
+										<l:VerticalLayout>
+											<Image
+												class="circular--square tile_card"
+												width="250px"
+												height="250px"
+												src="/webapp/img/people/person_3.jpg"/>	
+											<Text 
+												text="Name:"
+												textAlign="Center"/>
+											<Text 
+												text="Idade:"
+												textAlign="Center"/>
+										</l:VerticalLayout>
+											
+									</items>
+								</FlexBox>
+							</Panel>     
+						</l:content>
+					</l:VerticalLayout>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

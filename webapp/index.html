@@ -20,12 +20,14 @@
 		<script>
 			sap.ui.localResources("view");
 			var app = new sap.m.App("app",{initialPage:"idMain"});
-			var page = sap.ui.view({id:"idMain", viewName:"view.Main", type:sap.ui.core.mvc.ViewType.XML});
+			var main = sap.ui.view({id:"idMain", viewName:"view.Main", type:sap.ui.core.mvc.ViewType.XML});
 			var chatbotView = sap.ui.view({id:"idChatBot", viewName:"view.ChatBot", type:sap.ui.core.mvc.ViewType.XML});
-			var chatbotAnswer = sap.ui.view({id:"idChatBotAnswer", viewName:"view.ChatBotAnswer", type:sap.ui.core.mvc.ViewType.XML});
-			app.addPage(page);
+			var chatbotAnswer = sap.ui.view({id:"idChatAnswer", viewName:"view.ChatBotAnswer", type:sap.ui.core.mvc.ViewType.XML});
+			var patientList = sap.ui.view({id:"idPatientList", viewName:"view.PatientList", type:sap.ui.core.mvc.ViewType.XML});
+			app.addPage(main);
 			app.addPage(chatbotView);
 			app.addPage(chatbotAnswer);
+			app.addPage(patientList);
 			app.placeAt("content");
 		</script>
 	</head>
