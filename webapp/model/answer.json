@@ -1,0 +1,20 @@
+[
+	{
+		"id":1,
+		"userId":2,
+		"questionId":4,
+		"message":"Melhorar sus saúde"
+	},
+	{
+		"id":2,
+		"userId":2,
+		"questionId":2,
+		"message":"Não terá Alzheimer"
+	},
+	{
+		"id":2,
+		"userId":2,
+		"questionId":3,
+		"message":"Com muito repeito, carinho e dedicação"
+	}
+]

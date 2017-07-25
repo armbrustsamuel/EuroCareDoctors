@@ -1,0 +1,20 @@
+[
+	{
+		"id":1,
+		"userId":2,
+		"answerId":4,
+		"message":"Para o que servem os remédios?"
+	},
+	{
+		"id":2,
+		"userId":2,
+		"answerId":2,
+		"message":"Também terei Alzheimer?"
+	},
+	{
+		"id":2,
+		"userId":2,
+		"answerId":3,
+		"message":"Como devo tratar meu familiar agora?"
+	}
+]
