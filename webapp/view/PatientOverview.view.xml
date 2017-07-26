@@ -1,9 +1,128 @@
-<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="EuroCareDoctor.controller.PatientOverview"
-	xmlns:html="http://www.w3.org/1999/xhtml">
+<mvc:View 
+	xmlns:core="sap.ui.core" 
+	xmlns:mvc="sap.ui.core.mvc" 
+	xmlns="sap.m"
+	xmlns:l="sap.ui.layout"
+	xmlns:form="sap.ui.layout.form"
+	xmlns:viz="sap.viz.ui5.controls"
+	xmlns:chart="sap.suite.ui.microchart"
+	xmlns:viz.data="sap.viz.ui5.data"
+	xmlns:html="http://www.w3.org/1999/xhtml"
+	controllerName="EuroCareDoctor.controller.PatientOverview">
 	<App>
 		<pages>
-			<Page title="Title">
-				<content></content>
+			<Page title="Eurocare Patient Overview"
+				showNavButton="true"
+		        navButtonPress="handleNavButtonPress">
+				<content>
+					<Panel>
+						<l:VerticalLayout id="containerLayout" width="100%" >
+							<Panel>
+								<headerToolbar>
+									<Toolbar>
+										<Title level="H2" class="ne-title" text="Irene Martins Ferreira" />
+									</Toolbar>
+								</headerToolbar>
+								
+								<l:VerticalLayout>
+									<l:HorizontalLayout>
+										<l:VerticalLayout>
+											<Text text="Gender:{Patient>gender}"/>
+											<Text text="Diagnosal Date:{Patient>diagnosalDate}"/>
+											<Text text="Birth Date:{Patient>birthDate}"/>	
+										</l:VerticalLayout>
+										<l:VerticalLayout>
+											<l:HorizontalLayout>
+												<chart:RadialMicroChart size="M" percentage="45" press="press" class="sapUiSmallMargin">
+												</chart:RadialMicroChart>
+												<VBox class="sapUiSmallMarginBegin">
+													<Text text="Passos durante o dia"/>
+												</VBox>	
+											</l:HorizontalLayout>
+										</l:VerticalLayout>
+										<l:VerticalLayout>
+											<l:HorizontalLayout>
+												<chart:RadialMicroChart size="M" percentage="80" press="press" class="sapUiSmallMargin">
+												</chart:RadialMicroChart>
+												<VBox class="sapUiSmallMarginBegin">
+													<Text text="Reconhecimento dos familiares"/>
+												</VBox>	
+											</l:HorizontalLayout>
+										</l:VerticalLayout>
+										<l:VerticalLayout>
+											<l:HorizontalLayout>
+												<chart:RadialMicroChart size="M" percentage="75" press="press" class="sapUiSmallMargin">
+												</chart:RadialMicroChart>
+												<VBox class="sapUiSmallMarginBegin">
+													<Text text="Capacidade motora"/>
+												</VBox>
+											</l:HorizontalLayout>
+										</l:VerticalLayout>
+									</l:HorizontalLayout>
+								</l:VerticalLayout>
+							</Panel>
+
+							<l:BlockLayout id="BlockLayout" background="{/selectedBackground}">
+								<l:BlockLayoutRow accentCells="Accent1">
+									<l:BlockLayoutCell>
+										<Title level="H2" class="ne-title" text="Diagnóstico" />
+										<Text text="Ao décimo terceiro dia do mês de janeiro de 2015, Irene sentiu-se mal e buscou auxilio no Hospital da Saúde de Novo Hamburgo."/>
+									</l:BlockLayoutCell>
+									<l:BlockLayoutCell>
+										<Title level="H2" class="ne-title" text="Evolução" />
+										<Text text="A paciente tem apresentado evolução constante com melhoria do aproveitamento do tempo com caminhadas e melhora na capacidade de reconhecimento de seus familiares."/>
+									</l:BlockLayoutCell>
+								</l:BlockLayoutRow>
+								<l:BlockLayoutRow>
+									<l:BlockLayoutCell>
+										<Title level="H2" class="ne-title" text="Chatbot" />
+										<FeedInput
+											enabled="false"	
+											icon="/webapp/img/people/irene.jpg"
+											value="Question: {Feed>question}"
+											showIcon="true" />
+										<FeedInput
+											icon="/webapp/img/people/doctor_1.jpg"
+											showIcon="true" />
+									</l:BlockLayoutCell>
+									<l:BlockLayoutCell>
+										<l:VerticalLayout>
+											<Title level="H1" class="ne-title" text="Retrospecto" />
+											<chart:ColumnMicroChart width="200px" size="L" press="press" class="sapUiSmallMargin">
+												<chart:leftTopLabel>
+													<chart:ColumnMicroChartLabel label="2015" />
+												</chart:leftTopLabel>
+												<chart:rightTopLabel>
+													<chart:ColumnMicroChartLabel label="2017" />
+												</chart:rightTopLabel>
+												<chart:rightBottomLabel>
+													<chart:ColumnMicroChartLabel label="Capacidade reconhecimento" />
+												</chart:rightBottomLabel>
+												<chart:columns>
+													<chart:ColumnMicroChartData	value="60" color="Good"/>
+													<chart:ColumnMicroChartData	value="100" color="Good"/>
+													<chart:ColumnMicroChartData	value="-20" color="Error"/>
+													<chart:ColumnMicroChartData	value="60" color="Good"/>
+													<chart:ColumnMicroChartData	value="55" color="Neutral"/>
+													<chart:ColumnMicroChartData	value="15" color="Neutral"/>
+													<chart:ColumnMicroChartData	value="60" color="Good"/>
+													<chart:ColumnMicroChartData	value="100" color="Good"/>
+													<chart:ColumnMicroChartData	value="60" color="Good"/>
+													<chart:ColumnMicroChartData	value="55" color="Neutral"/>
+													<chart:ColumnMicroChartData	value="15" color="Neutral"/>
+													<chart:ColumnMicroChartData	value="60" color="Good"/>
+													<chart:ColumnMicroChartData	value="100" color="Good"/>
+													<chart:ColumnMicroChartData	value="60" color="Good"/>
+												</chart:columns>
+											</chart:ColumnMicroChart>
+										</l:VerticalLayout>
+									</l:BlockLayoutCell>
+								</l:BlockLayoutRow>
+							</l:BlockLayout>
+						</l:VerticalLayout>
+						
+					</Panel>
+				</content>
 			</Page>
 		</pages>
 	</App>
