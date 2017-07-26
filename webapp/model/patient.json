@@ -1,20 +1,23 @@
 [
 	{
-	"name":"Maria Joana",
-	"gender":"female",
-	"birthDate":"1987-04-04",
-	"diagnosalDate":"2001-03-02"
+		"userId":1,
+		"name":"Maria Joana",
+		"gender":"female",
+		"birthDate":"1987-04-04",
+		"diagnosalDate":"2001-03-02"
 	},
 	{
-	"name":"João Carlos",
-	"gender":"male",
-	"birthDate":"1967-04-30",
-	"diagnosalDate":"2001-03-02"
+		"userId":2,
+		"name":"João Carlos",
+		"gender":"male",
+		"birthDate":"1967-04-30",
+		"diagnosalDate":"2001-03-02"
 	},
 	{
-	"name":"Marcos",
-	"gender":"male",
-	"birthDate":"1977-09-03",
-	"diagnosalDate":"2001-03-02"
+		"userId":3,
+		"name":"Marcos",
+		"gender":"male",
+		"birthDate":"1977-09-03",
+		"diagnosalDate":"2001-03-02"
 	}
 ]
