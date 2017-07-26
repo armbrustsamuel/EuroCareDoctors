@@ -7,7 +7,7 @@
 	xmlns:html="http://www.w3.org/1999/xhtml">
 	<App>
 		<pages>
-			<Page title="Eurocare Chatbot"
+			<Page title="EuroCare Chatbot"
 		        showNavButton="true"
 		        navButtonPress="handleNavButtonPress">
 				<content>
@@ -15,88 +15,29 @@
 						class="navigationExamples"
 						width="100%" >
 						<l:content>
-				 
-							<!--<Panel>-->
-							<!--	<headerToolbar>-->
-							<!--		<Toolbar>-->
-							<!--			<Title level="H2" text="Variable width" />-->
-							<!--		</Toolbar>-->
-							<!--	</headerToolbar>-->
-				 
-							<!--<FlexBox-->
-							<!--	class="ne-flexbox1"-->
-							<!--	width="95%"-->
-							<!--	renderType="List"-->
-							<!--	justifyContent="Center"-->
-							<!--	alignItems="Center">-->
-							<!--	<items>-->
-							<!--		<core:HTML content="&lt;a href='javascript:return false;'&gt;Item 1&lt;/a&gt;" />-->
-							<!--		<core:HTML content="&lt;a href='javascript:return false;'&gt;Long item 2&lt;/a&gt;" />-->
-							<!--		<core:HTML content="&lt;a href='javascript:return false;'&gt;Item 3&lt;/a&gt;" />-->
-							<!--	</items>-->
-							<!--</FlexBox>-->
-							<!--</Panel>-->
-				 
 							<Panel>
 								<headerToolbar>
 									<Toolbar>
 										<Title level="H2" class="ne-title" text="Open Questions" />
 									</Toolbar>
 								</headerToolbar>
-								<Button press="handleQuestionPressed" />
+								<!--<Button press="handleQuestionPressed" />-->
 								<FlexBox
-									class="ne-flexbox2"
 									width="95%"
-									renderType="List"
 									justifyContent="SpaceBetween"
-									alignItems="Center"	>
-									<items>
-										<core:HTML
-											content="&lt;a href='javascript:return false;'&gt;Para o que servem os remédios?&lt;/a&gt;">
-											<core:layoutData>
-												<FlexItemData growFactor="1" press="handleQuestionPressed"/>
-											</core:layoutData>
-										</core:HTML>
-										<core:HTML
-											content="&lt;a href='javascript:return false;'&gt;Também terei Alzheimer?&lt;/a&gt;">
-											<core:layoutData>
-												<FlexItemData growFactor="1" />
-											</core:layoutData>
-										</core:HTML>
-										<core:HTML
-											content="&lt;a href='javascript:return false;'&gt;Como devo tratar meu familiar agora?&lt;/a&gt;">
-											<core:layoutData>
-												<FlexItemData growFactor="1" />
-											</core:layoutData>
-										</core:HTML>
-									</items>
-								</FlexBox>
-								<FlexBox
-									class="ne-flexbox2"
-									width="95%"
-									renderType="List"
-									justifyContent="SpaceBetween"
-									alignItems="Center">
-									<items>
-										<core:HTML
-											content="&lt;a href='javascript:return false;'&gt;Para o que servem os remédios?&lt;/a&gt;">
-											<core:layoutData>
-												<FlexItemData growFactor="1" />
-											</core:layoutData>
-										</core:HTML>
-										<core:HTML
-											content="&lt;a href='javascript:return false;'&gt;Também terei Alzheimer?&lt;/a&gt;">
-											<core:layoutData>
-												<FlexItemData growFactor="1" />
-											</core:layoutData>
-										</core:HTML>
-										<core:HTML
-											content="&lt;a href='javascript:return false;'&gt;Como devo tratar meu familiar agora?&lt;/a&gt; ">
-											<core:layoutData>
-												<FlexItemData growFactor="1" />
-											</core:layoutData>
-										</core:HTML>
-									</items>
+									alignItems="Center"	
+									items="{Feed>/feedList}"
+									wrap="Wrap">
+									<l:VerticalLayout>
+										<Panel>
+											<Text id="questionText" text="{Feed>message}"/>
+										</Panel>
+										<FeedInput
+											placeholder="Post something here"
+											icon="/webapp/img/people/doctor_1.jpg"
+											showIcon="true"
+											post="handlePostPressed"/>
+									</l:VerticalLayout>
 								</FlexBox>
 							</Panel>
 							
@@ -114,19 +55,19 @@
 									alignItems="Center">
 									<items>
 										<core:HTML
-											content="&lt;a href='javascript:return false;'&gt;Para o que servem os remédios?&lt;/a&gt;">
+											content="&lt;a href='javascript:return false;'&gt;O que fazer com remédios antigos?&lt;/a&gt;">
 											<core:layoutData>
 												<FlexItemData growFactor="1" />
 											</core:layoutData>
 										</core:HTML>
 										<core:HTML
-											content="&lt;a href='javascript:return false;'&gt;Também terei Alzheimer?&lt;/a&gt;">
+											content="&lt;a href='javascript:return false;'&gt;Alzheimer tem cura?&lt;/a&gt;">
 											<core:layoutData>
 												<FlexItemData growFactor="1"/>
 											</core:layoutData>
 										</core:HTML>
 										<core:HTML
-											content="&lt;a href='javascript:return false;'&gt;Como devo tratar meu familiar agora?&lt;/a&gt;">
+											content="&lt;a href='javascript:return false;'&gt;O que é cuidar bem?&lt;/a&gt;">
 											<core:layoutData>
 												<FlexItemData growFactor="1" />
 											</core:layoutData>

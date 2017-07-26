@@ -3,6 +3,7 @@
 	xmlns:core="sap.ui.core"
 	xmlns:html="http://www.w3.org/1999/xhtml" 
 	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:l="sap.ui.layout"
 	displayBlock="true" xmlns="sap.m">
 	<App>
 		<pages>
@@ -10,7 +11,8 @@
 				<content>
 					<TileContainer 
 						id="myTileContainer" 
-						tileDelete="handleTileDelete">
+						tileDelete="handleTileDelete"
+						items="{Tiles>/tileList}">
 						<StandardTile 
 							id="oTile1" 
 							class="tile_card"
@@ -32,6 +34,15 @@
 							info="3 patients to review" 
 							infoState="Error"
 							press="handlePatientListPress"/>
+						
+						<!-- TO BE REVIEWED-->
+						<!--<StandardTile-->
+						<!--	class="tile_card"-->
+						<!--	icon="sap-icon://customer"-->
+						<!--	title="{Tiles>name}" -->
+						<!--	info="{Tiles>detail}" -->
+						<!--	infoState="{Tiles>status}"-->
+						<!--	press="{Tiles>press}"/>-->
 						</TileContainer>
 				</content>
 				<footer>

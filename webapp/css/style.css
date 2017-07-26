@@ -31,17 +31,17 @@
 }
 .navigationExamples .ne-flexbox2 li {
 	margin: 0.5em;
-	width: 25%;
-	min-width: 15%;
+	width: 30%;
+	min-width: 25%;
 	list-style-type: none;
 	text-align: center;
-	background-color: #193441;
+	/*background-color: #193441;*/
 	padding: 0.4em;
 	-webkit-transition: width 0.5s ease-out, background-color 0.5s ease-out, font-size 0.5s ease-out;
 }
 .navigationExamples .ne-flexbox2 li:hover {
 	width: 35%;
-	background-color: orange;
+	background-color: gray;
 	font-size: 1.5em;
 }
 .navigationExamples .ne-flexbox1 li a,
@@ -69,4 +69,10 @@
 
 .circular--square.alert {
 	border: 5px dotted red;
+}
+
+.SMC_SRMC {
+	margin: 0px 4rem;
+	width: 8rem;
+	height: 8rem;
 }

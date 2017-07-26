@@ -24,10 +24,12 @@
 			var chatbotView = sap.ui.view({id:"idChatBot", viewName:"view.ChatBot", type:sap.ui.core.mvc.ViewType.XML});
 			var chatbotAnswer = sap.ui.view({id:"idChatAnswer", viewName:"view.ChatBotAnswer", type:sap.ui.core.mvc.ViewType.XML});
 			var patientList = sap.ui.view({id:"idPatientList", viewName:"view.PatientList", type:sap.ui.core.mvc.ViewType.XML});
+			var patientOverview = sap.ui.view({id:"idPatientOverview", viewName:"view.PatientOverview", type:sap.ui.core.mvc.ViewType.XML});
 			app.addPage(main);
 			app.addPage(chatbotView);
 			app.addPage(chatbotAnswer);
 			app.addPage(patientList);
+			app.addPage(patientOverview);
 			app.placeAt("content");
 		</script>
 	</head>

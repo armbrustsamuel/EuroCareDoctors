@@ -6,19 +6,20 @@
 	xmlns:html="http://www.w3.org/1999/xhtml">
 	<App>
 		<pages>
-			<Page title="Eurocare Chatbot Answer"
+			<Page title="EuroCare Chatbot Feedback"
 				showNavButton="true"
 				navButtonPress="handleNavButtonPress">
 				<content>
 					<Panel>
-						<Label text="Product" labelFor="productInput"/>
-						<TextArea value="" growing="true" width="100%"/>
+						<!--<Label text="Question" labelFor="questionText"/>-->
+						<Text id="questionText" text="Para o que servem os remédios?"/>
+					</Panel>
+					<Panel>
+						<TextArea value="" placeholder="Digite uma resposta para a pergunta..." growing="true" width="60%" />
 					</Panel>
 				</content>
 				<footer>
 				    <OverflowToolbar>
-				    	<!--<core:Icon-->
-				    	<!--	src="sap-icon://user-settings"/>-->
 				        <ToolbarSpacer/>
 				        <Image
             		    	visible="true"
