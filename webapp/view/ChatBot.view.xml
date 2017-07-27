@@ -28,7 +28,7 @@
 									alignItems="Center"	
 									items="{Feed>/feedList}"
 									wrap="Wrap">
-									<l:VerticalLayout>
+									<l:VerticalLayout visible="{= ${Feed>done} === 'false' ? true : false}">
 										<Panel>
 											<Text id="questionText" text="{Feed>message}"/>
 										</Panel>
@@ -52,22 +52,11 @@
 									width="95%"
 									renderType="List"
 									justifyContent="SpaceBetween"
-									alignItems="Center">
+									alignItems="Center"
+									items="{Feed>/feedList}">
 									<items>
-										<core:HTML
-											content="&lt;a href='javascript:return false;'&gt;O que fazer com remédios antigos?&lt;/a&gt;">
-											<core:layoutData>
-												<FlexItemData growFactor="1" />
-											</core:layoutData>
-										</core:HTML>
-										<core:HTML
-											content="&lt;a href='javascript:return false;'&gt;Alzheimer tem cura?&lt;/a&gt;">
-											<core:layoutData>
-												<FlexItemData growFactor="1"/>
-											</core:layoutData>
-										</core:HTML>
-										<core:HTML
-											content="&lt;a href='javascript:return false;'&gt;O que é cuidar bem?&lt;/a&gt;">
+										<core:HTML visible="{= ${Feed>done} === 'true' ? true : false}"
+											content="&lt;a href='javascript:return false;'&gt;{Feed>message}&lt;/a&gt;">
 											<core:layoutData>
 												<FlexItemData growFactor="1" />
 											</core:layoutData>

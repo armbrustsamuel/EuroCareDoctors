@@ -15,27 +15,32 @@ sap.ui.define([
 	        		"id":1,
 	        		"answerId":1,
 	        		"userId":2,
-	        		"message":"Como faço para aliviar a dor?"
+	        		"message":"Como faço para aliviar a dor?",
+	        		"done":"false"
 	        	},{
 	        		"id":2,
 	        		"answerId":2,
 	        		"userId":2,
-	        		"message":"Qual a melhor forma de cuidar?"
+	        		"message":"Qual a melhor forma de cuidar?",
+	        		"done":"false"
 	        	},{
 	        		"id":3,
 	        		"answerId":3,
 	        		"userId":2,
-	        		"message":"Como devo tratar meu familiar agora?"
+	        		"message":"Como devo tratar meu familiar agora?",
+	        		"done":"false"
 	        	},{
 	        		"id":4,
 	        		"answerId":4,
 	        		"userId":2,
-	        		"message":"Também terei Alzheimer?"
+	        		"message":"Também terei Alzheimer?",
+	        		"done":"true"
 	        	},{
 	        		"id":5,
 	        		"answerId":5,
 	        		"userId":2,
-	        		"message":"Para o que servem os remédios?"
+	        		"message":"Para o que servem os remédios?",
+	        		"done":"true"
 	        	}]	
 	        });
 	        
