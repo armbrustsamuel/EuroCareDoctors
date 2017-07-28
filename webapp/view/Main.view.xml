@@ -18,7 +18,7 @@
 							class="tile_card"
 							icon="sap-icon://feed" 
 							title="ChatBot" 
-							info="4 new questions" 
+							info="3 new questions" 
 							infoState="Success" 
 							press="onChatBotClicked"/>
 						<!--<StandardTile id="oTile2" -->
@@ -31,7 +31,7 @@
 							class="tile_card"
 							icon="sap-icon://customer"
 							title="Patient" 
-							info="3 patients to review" 
+							info="1 patients to review" 
 							infoState="Error"
 							press="handlePatientListPress"/>
 						

@@ -18,6 +18,14 @@
         "entryPath": "/test-resources"
       },
       "description": "SAPUI5 Test Resources"
+    },
+    {
+    	"path": "/webapp/eurocarebackend",
+    	"target": {
+    		"type": "destination",
+    		"name": "eurocarebackend"
+    	},
+    	"description": "Back End URL"
     }
   ]
 }

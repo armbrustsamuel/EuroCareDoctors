@@ -28,10 +28,15 @@
 									alignItems="Center"	
 									items="{Feed>/feedList}"
 									wrap="Wrap">
-									<l:VerticalLayout visible="{= ${Feed>done} === 'false' ? true : false}">
-										<Panel>
-											<Text id="questionText" text="{Feed>message}"/>
-										</Panel>
+									<l:VerticalLayout visible="{= ${Feed>done} === false ? true : false}">
+										<!--<Panel>-->
+										<!--	<Text id="questionText" text="{Feed>message}"/>-->
+										<!--</Panel>-->
+										<FeedInput
+											enabled="false"
+											icon="/webapp/img/people/person_2.jpg"
+											showIcon="true"
+											value="{Feed>message}"/>
 										<FeedInput
 											placeholder="Post something here"
 											icon="/webapp/img/people/doctor_1.jpg"
@@ -55,7 +60,7 @@
 									alignItems="Center"
 									items="{Feed>/feedList}">
 									<items>
-										<core:HTML visible="{= ${Feed>done} === 'true' ? true : false}"
+										<core:HTML visible="{= ${Feed>done} === true ? true : false}"
 											content="&lt;a href='javascript:return false;'&gt;{Feed>message}&lt;/a&gt;">
 											<core:layoutData>
 												<FlexItemData growFactor="1" />

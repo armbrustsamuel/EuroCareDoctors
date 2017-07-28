@@ -21,28 +21,53 @@
 										<Title level="H2" class="ne-title" text="Under Observation" />
 									</Toolbar>
 								</headerToolbar>
-								<FlexBox
-									class="ne-flexbox2"
-									width="95%"
-									justifyContent="SpaceBetween"
-									alignItems="Center"	>
-									<items>
-										<l:VerticalLayout>
-											<Image
-												press="handlePerson_4Pressed"
-												class="circular--square alert tile_card"
-												width="200px"
-												height="200px"
-												src="/webapp/img/people/irene.jpg"/>
-											<Text 
-												text="Name:{Patient>Name}"
-												textAlign="Center"/>
-											<Text 
-												text="Idade:{Patient>Age}"
-												textAlign="Center"/>
-										</l:VerticalLayout>
-									</items>
-								</FlexBox>
+								<l:HorizontalLayout>
+									<l:VerticalLayout>
+										<FlexBox
+											class="ne-flexbox2"
+											width="95%"
+											justifyContent="SpaceBetween"
+											alignItems="Center"	>
+											<items>
+												<l:VerticalLayout>
+													<Image
+														press="handlePerson_4Pressed"
+														class="circular--square alert tile_card"
+														width="200px"
+														height="200px"
+														src="/webapp/img/people/person_5.jpg"/>
+													<Text 
+														text="Name: Nicolas"
+														textAlign="Center"/>
+													<Text 
+														text="Gender: male"
+														textAlign="Center"/>
+												</l:VerticalLayout>
+											</items>
+										</FlexBox>
+									</l:VerticalLayout>
+									<l:VerticalLayout>
+										<List id="notificationList" items="{Notification>/notificationList}" class="sapContrast sapContrastPlus" >
+											<NotificationListItem
+												visible="{= ${Notification>seen} === false ? true : false}"
+												title="Notification"
+												description="{Notification>message}"
+												showCloseButton="true"
+												unread="{Notification>seen}"
+												datetime="Date: {Notification>date} - {Notification>time}"
+												priority="High"
+												close="onItemClose"
+												press="onListItemPress"
+												authorName="From: Irene"
+												authorPicture="/webapp/img/people/person_2.jpg">
+												<buttons>
+													<Button text="Accept" type="Accept" press="onAcceptPress" icon="sap-icon://accept"/>
+													<!--<Button text="Reject" type="Reject" press="onRejectPress" icon="sap-icon://sys-cancel"/>-->
+												</buttons>
+											</NotificationListItem>
+										</List>
+									</l:VerticalLayout>
+								</l:HorizontalLayout>
 							</Panel>   
 							<Panel>
 								<headerToolbar>
@@ -54,63 +79,26 @@
 									class="ne-flexbox2"
 									width="95%"
 									justifyContent="SpaceBetween"
-									alignItems="Center">
+									alignItems="Center"
+									items="{Patient>/patientList}">
 									<items>
-										<l:VerticalLayout>
-											<Image
-												class="circular--square tile_card"
-												width="170px"
-												height="170px"
-												src="/webapp/img/people/person_1.jpg"/>
-											<Text 
-												text="Name:{Patient>name}"
-												textAlign="Center"/>
-											<Text 
-												text="Idade:"
-												textAlign="Center"/>
-										</l:VerticalLayout>
-										
-										<!-- TO BE DELETED WHEN AUTOMATICALLY added-->
-										<l:VerticalLayout>
-											<Image
-												class="circular--square tile_card"
-												width="170px"
-												height="170px"
-												src="/webapp/img/people/person_2.jpg"/>
-											<Text 
-												text="Name:{Patient>name}"
-												textAlign="Center"/>
-											<Text 
-												text="Idade:"
-												textAlign="Center"/>
-										</l:VerticalLayout>
-										<l:VerticalLayout>
-											<Image
-												class="circular--square tile_card"
-												width="170px"
-												height="170px"
-												src="/webapp/img/people/person_3.jpg"/>	
-											<Text 
-												text="Name:"
-												textAlign="Center"/>
-											<Text 
-												text="Idade:"
-												textAlign="Center"/>
-										</l:VerticalLayout>
-										<l:VerticalLayout>
-											<Image
-												class="circular--square tile_card"
-												width="170px"
-												height="170px"
-												src="/webapp/img/people/person_4.jpg"/>
-											<Text 
-												text="Name:"
-												textAlign="Center"/>
-											<Text 
-												text="Idade:"
-												textAlign="Center"/>
-										</l:VerticalLayout>
+										<l:HorizontalLayout>
+											<l:VerticalLayout>
+												<Image
+													class="circular--square tile_card"
+													press="handlePatientPressed"
+													width="170px"
+													height="170px"
+													src="/webapp/img/people/person_{Patient>userId}.jpg"/>
+												<Text 
+													text="Name: {Patient>name}"
+													textAlign="Center"/>
+												<Text 
+													text="Gender: {Patient>gender}"
+													textAlign="Center"/>
+											</l:VerticalLayout>
 											
+										</l:HorizontalLayout>
 									</items>
 								</FlexBox>
 							</Panel>     

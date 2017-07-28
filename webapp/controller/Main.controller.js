@@ -7,12 +7,18 @@ sap.ui.define([
 	return Controller.extend("EuroCareDoctor.controller.Main", {
 		
 		oTilesModel : new JSONModel(),
-		
+		oQuantityModel: new JSONModel(),
 		onInit : function () {
 			// set mock model
 			// var sPath = jQuery.sap.getModulePath("com.sap.EuroCareDoctor","/webapp/model/tiles.json");
 			// var oModel = new JSONModel();
 			// oModel.tileList = new JSONModel(sPath);
+			
+			this.oQuantityModel.setData({
+				quantityQuestions: 0
+			});
+			
+			this.getView().setModel(this.oQuantityModel, "Feed");
 			
 			this.oTilesModel.setData({
 				tileList: [{
