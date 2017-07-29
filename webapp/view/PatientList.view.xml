@@ -68,29 +68,6 @@
 										</List>
 									</l:VerticalLayout>
 								</l:HorizontalLayout>
-								<FlexBox
-									class="ne-flexbox2"
-									width="95%"
-									justifyContent="SpaceBetween"
-									alignItems="Center"	>
-									<items>
-										<l:VerticalLayout>
-											<Image
-												class="circular--square alert tile_card"
-												width="200px"
-												height="200px"
-												src="/webapp/img/people/person_5.jpg"
-												press="handlePatientReport"
-												/>
-											<Text 
-												text="Name:{Patient>Name}"
-												textAlign="Center"/>
-											<Text 
-												text="Idade:{Patient>Age}"
-												textAlign="Center"/>
-										</l:VerticalLayout>
-									</items>
-								</FlexBox>
 							</Panel>   
 							<Panel>
 								<headerToolbar>
