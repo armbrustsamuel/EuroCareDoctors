@@ -94,7 +94,7 @@ sap.ui.define([
 		
 		fnReloadQuestionFromServer: function(that){
 		    return function(){
-		        that.fnLoadQuestionFromServer(that);
+		        that.fnLoadFeedFromServer(that);
 		    };
 		},
 		

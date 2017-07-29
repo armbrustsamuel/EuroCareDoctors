@@ -7,7 +7,7 @@
 	xmlns:html="http://www.w3.org/1999/xhtml">
 	<App>
 		<pages>
-			<Page title="EuroCare Chatbot"
+			<Page title="ChatBot"
 		        showNavButton="true"
 		        navButtonPress="handleNavButtonPress">
 				<content>
@@ -32,11 +32,18 @@
 										<!--<Panel>-->
 										<!--	<Text id="questionText" text="{Feed>message}"/>-->
 										<!--</Panel>-->
-										<FeedInput
-											enabled="false"
-											icon="/webapp/img/people/person_2.jpg"
-											showIcon="true"
-											value="{Feed>message}"/>
+										<!--<FeedInput-->
+										<!--	enabled="false"-->
+										<!--	icon="/webapp/img/people/person_{Feed>userId}.jpg"-->
+										<!--	showIcon="true"-->
+										<!--	value="{Feed>message}"/>-->
+										<FeedListItem
+											sender="Question"
+											icon="/webapp/img/people/person_{Feed>userId}.jpg"
+											iconPress="onPress"
+											iconDensityAware="false"
+											text="{Feed>message}"
+											convertLinksToAnchorTags="All" />
 										<FeedInput
 											placeholder="Post something here"
 											icon="/webapp/img/people/doctor_1.jpg"
@@ -52,22 +59,36 @@
 										<Title level="H2" class="ne-title" text="Answered Questions" />
 									</Toolbar>
 								</headerToolbar>
-								<FlexBox
-									class="ne-flexbox1"
-									width="95%"
-									renderType="List"
-									justifyContent="SpaceBetween"
-									alignItems="Center"
-									items="{Feed>/feedList}">
-									<items>
-										<core:HTML visible="{= ${Feed>done} === true ? true : false}"
-											content="&lt;a href='javascript:return false;'&gt;{Feed>message}&lt;/a&gt;">
-											<core:layoutData>
-												<FlexItemData growFactor="1" />
-											</core:layoutData>
-										</core:HTML>
-									</items>
-								</FlexBox>
+								<List
+									items="{Feed>/feedList}" >
+									<FeedListItem
+										visible="{= ${Feed>done} === true ? true : false}"
+										sender="{Feed>userId}"
+										icon="/webapp/img/people/person_{Feed>userId}.jpg"
+										senderPress="onPress"
+										iconPress="onPress"
+										iconDensityAware="false"
+										info="Answered"
+										timestamp=""
+										text="{Feed>message}"
+										convertLinksToAnchorTags="All" />
+								</List>
+								<!--<FlexBox-->
+								<!--	class="ne-flexbox1"-->
+								<!--	width="95%"-->
+								<!--	renderType="List"-->
+								<!--	justifyContent="SpaceBetween"-->
+								<!--	alignItems="Center"-->
+								<!--	items="{Feed>/feedList}">-->
+								<!--	<items>-->
+								<!--		<core:HTML visible="{= ${Feed>done} === true ? true : false}"-->
+								<!--			content="&lt;a href='javascript:return false;'&gt;{Feed>message}&lt;/a&gt;">-->
+								<!--			<core:layoutData>-->
+								<!--				<FlexItemData growFactor="1" />-->
+								<!--			</core:layoutData>-->
+								<!--		</core:HTML>-->
+								<!--	</items>-->
+								<!--</FlexBox>-->
 							</Panel>
 						</l:content>
 					</l:VerticalLayout>
@@ -79,7 +100,7 @@
             		    	visible="true"
             		    	width="80px"
             		    	height="40px"
-            		    	src="/webapp/img/SAP_2011_logo.svg"/>
+            		    	src="/webapp/img/eurofarma_logo.png"/>
 				    </OverflowToolbar>
         		</footer>
 			</Page>

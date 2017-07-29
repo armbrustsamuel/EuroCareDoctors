@@ -7,7 +7,7 @@
 	displayBlock="true" xmlns="sap.m">
 	<App>
 		<pages>
-			<Page title="EuroCare Doctors">
+			<Page title="EuroCare" class="eurocare-background">
 				<content>
 					<TileContainer 
 						id="myTileContainer" 
@@ -30,7 +30,7 @@
 						<StandardTile id="oTile3" 
 							class="tile_card"
 							icon="sap-icon://customer"
-							title="Patient" 
+							title="Patients" 
 							info="1 patients to review" 
 							infoState="Error"
 							press="handlePatientListPress"/>

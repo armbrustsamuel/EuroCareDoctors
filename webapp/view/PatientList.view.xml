@@ -7,7 +7,7 @@
 	xmlns:html="http://www.w3.org/1999/xhtml">
 	<App>
 		<pages>
-			<Page title="EuroCare Patient List"
+			<Page title="Patients"
 				class="title-enhanced"
 				showNavButton="true"
 		        navButtonPress="handleNavButtonPress">
@@ -37,7 +37,7 @@
 														height="200px"
 														src="/webapp/img/people/person_5.jpg"/>
 													<Text 
-														text="Name: Nicolas"
+														text="Name: Nicolas Martins Ferreira  "
 														textAlign="Center"/>
 													<Text 
 														text="Gender: male"
@@ -45,6 +45,15 @@
 												</l:VerticalLayout>
 											</items>
 										</FlexBox>
+									</l:VerticalLayout>
+									<l:VerticalLayout>
+										<Panel></Panel>
+									</l:VerticalLayout>
+									<l:VerticalLayout>
+										<Panel></Panel>
+									</l:VerticalLayout>
+									<l:VerticalLayout>
+										<Panel></Panel>
 									</l:VerticalLayout>
 									<l:VerticalLayout>
 										<List id="notificationList" items="{Notification>/notificationList}" class="sapContrast sapContrastPlus" >
@@ -61,7 +70,7 @@
 												authorName="From: Irene"
 												authorPicture="/webapp/img/people/person_2.jpg">
 												<buttons>
-													<Button text="Accept" type="Accept" press="onAcceptPress" icon="sap-icon://accept"/>
+													<Button text="Ok" type="Accept" press="onAcceptPress" icon="sap-icon://accept"/>
 													<!--<Button text="Reject" type="Reject" press="onRejectPress" icon="sap-icon://sys-cancel"/>-->
 												</buttons>
 											</NotificationListItem>
@@ -106,13 +115,13 @@
 					</l:VerticalLayout>
 				</content>
 				<footer>
-				    <OverflowToolbar>
+				    <OverflowToolbar >
 				        <ToolbarSpacer/>
 				        <Image
             		    	visible="true"
-            		    	width="80px"
-            		    	height="40px"
-            		    	src="/webapp/img/SAP_2011_logo.svg"/>
+            		    	width="200px"
+            		    	height="50px"
+            		    	src="/webapp/img/eurofarma_logo.png"/>
 				    </OverflowToolbar>
         		</footer>
 			</Page>
