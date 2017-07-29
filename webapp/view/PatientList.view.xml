@@ -31,11 +31,11 @@
 											<items>
 												<l:VerticalLayout>
 													<Image
-														press="handlePerson_4Pressed"
 														class="circular--square alert tile_card"
 														width="200px"
 														height="200px"
-														src="/webapp/img/people/person_5.jpg"/>
+														src="/webapp/img/people/person_5.jpg"
+														press="handlePatientReport"/>
 													<Text 
 														text="Name: Nicolas Martins Ferreira  "
 														textAlign="Center"/>

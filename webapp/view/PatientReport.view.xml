@@ -80,42 +80,84 @@
 			</ObjectPageSection>
 			<ObjectPageSection title="Health Monitor">
 				<subSections>
-					<ObjectPageSubSection>
-						<l:VerticalLayout>
+					<ObjectPageSubSection title="Findings">
+						<!--<l:VerticalLayout>-->
 						<l:HorizontalLayout >
-						<l:VerticalLayout>
-							<m:Text text="Last Appointment: 34 days ago"/>
-							<m:Text text="Next Appointment: To Be Scheduled"/>
-						</l:VerticalLayout>
+						<!--<l:VerticalLayout>-->
+						<!--		<m:Title text="Incidents/notes" textAlign="center" class="sapUiSmallMargin"/>-->
+						<!--		<m:FlexBox width="50rem" height="15rem" alignItems="Start" justifyContent="End">-->
+						<!--			<m:items>-->
+							<!--<m:Title text="Incidents/notes"/>-->
+							<!--<m:Text text="Fell."/>-->
+							<!--<m:Text text="Tried to run away."/>-->
+						<!--		<m:Text text="He can't eat on his own since 04/21/2016."/>-->
+						<!--	<m:Text text="He can't shower alone since 12/08/2016."/>-->
+						<!--	<m:Text text="He can't dress himself since 01/02/2017."/>-->
+						<!--		</m:items>-->
+						<!--		</m:FlexBox>-->
+						<!--</l:VerticalLayout>-->
 					<!--</ObjectPageSubSection>-->
 					<!--<ObjectPageSubSection title="Limitations">-->
 						<l:VerticalLayout >
+								<m:Title text="Incidents/Notes" textAlign="center" class="sapUiSmallMargin"/>
+								<m:FlexBox width="50rem" height="10rem" alignItems="Start" justifyContent="Start">
+									<m:items>
+							<m:Text text="He fell                               ."/>
+							<m:Text text="He tried to leave the house           ."/>
+							
+								</m:items>
+								</m:FlexBox>
+						</l:VerticalLayout>
+						<m:Panel></m:Panel>
+						<l:VerticalLayout >
+								<m:Title text="Limitations" textAlign="center" class="sapUiSmallMargin"/>
+								<m:FlexBox width="30rem" height="10rem" alignItems="Start" justifyContent="End">
+									<m:items>
+							<!--<m:Title text="Limitations"/>-->
 							<m:Text text="He can't eat on his own since 04/21/2016."/>
 							<m:Text text="He can't shower alone since 12/08/2016."/>
 							<m:Text text="He can't dress himself since 01/02/2017."/>
+								</m:items>
+								</m:FlexBox>
 						</l:VerticalLayout>
 							</l:HorizontalLayout>
-					</l:VerticalLayout>
+					<!--</l:VerticalLayout>-->
 					</ObjectPageSubSection>
 						<ObjectPageSubSection title="Physical Activities">
-					<l:VerticalLayout>
-									<m:Title text="Average of steps from the last 7 days" class="sapUiSmallMargin"/>
-									<m:FlexBox width="40rem" height="10rem" alignItems="Right" class="sapUiSmallMargin">
+						<l:VerticalLayout>
+									<m:Title text="Last week's average steps" class="sapUiSmallMargin"/>
+										<m:FlexBox width="30rem" height="15rem" alignItems="Start" justifyContent="Center">
 										<m:items>
 											<chart:InteractiveLineChart>
 												<chart:points>
-													<chart:InteractiveLineChartPoint value="220" displayedValue="220 steps" label="1"/>
-													<chart:InteractiveLineChartPoint value="213" displayedValue="213 steps" label="2"/>
-													<chart:InteractiveLineChartPoint value="189" displayedValue="189 steps" label="3"/>
-													<chart:InteractiveLineChartPoint value="199" displayedValue="199 steps" label="4"/>
-													<chart:InteractiveLineChartPoint value="154" displayedValue="154 steps" label="5"/>
-													<chart:InteractiveLineChartPoint value="112" displayedValue="112 steps" label="6"/>
-													<chart:InteractiveLineChartPoint value="107" displayedValue="107 steps" label="7"/>
+													<chart:InteractiveLineChartPoint value="920" displayedValue="920 steps" label="6"/>
+													<chart:InteractiveLineChartPoint value="913" displayedValue="913 steps" label="5"/>
+													<chart:InteractiveLineChartPoint value="889" displayedValue="889 steps" label="4"/>
+													<chart:InteractiveLineChartPoint value="899" displayedValue="899 steps" label="3"/>
+													<chart:InteractiveLineChartPoint value="854" displayedValue="854 steps" label="2"/>
+													<chart:InteractiveLineChartPoint value="812" displayedValue="812 steps" label="1"/>
 												</chart:points>
 											</chart:InteractiveLineChart>
 										</m:items>
 									</m:FlexBox>
-								</l:VerticalLayout>
+						</l:VerticalLayout>
+						<l:VerticalLayout>
+									<m:Title text="Weight history (Last 6 months)" class="sapUiSmallMargin"/>
+										<m:FlexBox width="30rem" height="15rem" alignItems="Start" justifyContent="Center">
+										<m:items>
+											<chart:InteractiveLineChart>
+												<chart:points>
+													<chart:InteractiveLineChartPoint value="90" displayedValue="90kgs" label="6"/>
+													<chart:InteractiveLineChartPoint value="83" displayedValue="83kgs" label="5"/>
+													<chart:InteractiveLineChartPoint value="83" displayedValue="83kgs" label="4"/>
+													<chart:InteractiveLineChartPoint value="72" displayedValue="72kgs" label="3"/>
+													<chart:InteractiveLineChartPoint value="65" displayedValue="65kgs" label="2"/>
+													<chart:InteractiveLineChartPoint value="58" displayedValue="58kgs" label="1"/>
+												</chart:points>
+											</chart:InteractiveLineChart>
+										</m:items>
+									</m:FlexBox>
+						</l:VerticalLayout>
 					</ObjectPageSubSection>
 				</subSections>
 			</ObjectPageSection>
