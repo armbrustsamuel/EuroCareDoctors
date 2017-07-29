@@ -60,6 +60,11 @@
     text-align: center;
 }
 
+.piechart{
+		background-color: orange;
+		color: orange;
+}
+
 .circular--square {
   border-top-left-radius: 60% 60%;
   border-top-right-radius: 60% 60%;

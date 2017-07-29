@@ -1,0 +1,145 @@
+<core:View controllerName="EuroCareDoctor.controller.PatientReport" xmlns:core="sap.ui.core" xmlns="sap.uxap" xmlns:m="sap.m"
+	xmlns:html="http://www.w3.org/1999/xhtml" xmlns:l="sap.ui.layout" xmlns:chart="sap.suite.ui.microchart">
+	<ObjectPageLayout enableLazyLoading="false" showTitleInHeaderContent="true" showEditHeaderButton="false"
+		editHeaderButtonPress="handleEditBtnPress">
+		<headerTitle>
+			<ObjectPageHeader objectImageURI="/webapp/img/people/person_4.jpg" objectTitle="Patient" objectImageShape="Circle" objectImageAlt="Patient"
+				isObjectIconAlwaysVisible="false" isObjectTitleAlwaysVisible="false" isObjectSubtitleAlwaysVisible="false">
+				<actions>
+					<ObjectPageHeaderActionButton icon="sap-icon://pull-down" text="show section" type="Emphasized"/>
+					<ObjectPageHeaderActionButton icon="sap-icon://show" text="show state" type="Emphasized"/>
+					<ObjectPageHeaderActionButton text="Print Report" hideIcon="true" hideText="false" type="Emphasized" press="toggleFooter"/>
+				</actions>
+				<breadCrumbsLinks>
+					<m:Link text="Patient List" press="handleNavButtonPress"/>
+					<m:Link text="Current Patient"/>
+				</breadCrumbsLinks>
+			</ObjectPageHeader>
+		</headerTitle>
+		<headerContent>
+			<l:VerticalLayout>
+				<m:Text text="Age: 73"/>
+				<m:Text text="Diagnosal date: 06/03/2014 (3 years)"/>
+			</l:VerticalLayout>
+			<l:VerticalLayout>
+				<m:Text text="\n\nLast Appointment: 34 days ago"/>
+				<m:Text text="Next Appointment: To Be Scheduled"/>
+			</l:VerticalLayout>
+		</headerContent>
+		<sections>
+			<ObjectPageSection title="Personal Information">
+				<subSections>
+					<ObjectPageSubSection title=" ">
+						<m:Text text="Age: 73"/>
+						<m:Text text="Diagnosal date: 06/03/2014 (3 years)"/>
+						<m:Text text="Last Appointment: 34 days ago"/>
+						<m:Text text="Next Appointment: To Be Scheduled"/>
+						<m:Text text="Next Appointment: To Be Scheduled"/>
+					</ObjectPageSubSection>
+				</subSections>
+			</ObjectPageSection>
+			<ObjectPageSection title="Mood History">
+				<subSections>
+					<ObjectPageSubSection>
+						<l:HorizontalLayout>
+							<l:VerticalLayout>
+								<m:Title text="Last 7 days" textAlign="center" class="sapUiSmallMargin"/>
+								<m:FlexBox width="30rem" height="15rem" alignItems="Start" justifyContent="Center">
+									<m:items>
+										<chart:InteractiveDonutChart selectionChanged="onSelectionChanged" displayedSegments="4">
+											<chart:segments>
+												<chart:InteractiveDonutChartSegment label="1" value="20.0" displayedValue="20.0%" valueColor="Good"></chart:InteractiveDonutChartSegment>
+												<chart:InteractiveDonutChartSegment label="2" value="25.0" displayedValue="25.0%"></chart:InteractiveDonutChartSegment>
+												<chart:InteractiveDonutChartSegment label="3" value="17.0" displayedValue="17.0%"></chart:InteractiveDonutChartSegment>
+												<chart:InteractiveDonutChartSegment label="4" value="22.5" displayedValue="22.5%"></chart:InteractiveDonutChartSegment>
+												<chart:InteractiveDonutChartSegment label="5" value="15.5" displayedValue="15.5%"></chart:InteractiveDonutChartSegment>
+											</chart:segments>
+										</chart:InteractiveDonutChart>
+									</m:items>
+								</m:FlexBox>
+							</l:VerticalLayout>
+							<l:VerticalLayout>
+								<m:Title text="Past Month" textAlign="center" class="sapUiSmallMargin"/>
+								<m:FlexBox width="30rem" height="15rem" alignItems="End" justifyContent="Center">
+									<m:items>
+										<chart:InteractiveDonutChart selectionChanged="onSelectionChanged" displayedSegments="4" press="press">
+											<chart:segments>
+												<chart:InteractiveDonutChartSegment label="1" value="20.0" displayedValue="20.0%"></chart:InteractiveDonutChartSegment>
+												<chart:InteractiveDonutChartSegment label="2" value="25.0" displayedValue="25.0%"></chart:InteractiveDonutChartSegment>
+												<chart:InteractiveDonutChartSegment label="3" value="17.0" displayedValue="17.0%"></chart:InteractiveDonutChartSegment>
+												<chart:InteractiveDonutChartSegment label="4" value="22.5" displayedValue="22.5%"></chart:InteractiveDonutChartSegment>
+												<chart:InteractiveDonutChartSegment label="5" value="15.5" displayedValue="15.5%"></chart:InteractiveDonutChartSegment>
+											</chart:segments>
+										</chart:InteractiveDonutChart>
+									</m:items>
+								</m:FlexBox>
+							</l:VerticalLayout>
+						</l:HorizontalLayout>
+					</ObjectPageSubSection>
+				</subSections>
+			</ObjectPageSection>
+			<ObjectPageSection title="Health Monitor">
+				<subSections>
+					<ObjectPageSubSection>
+						<l:VerticalLayout>
+						<l:HorizontalLayout >
+						<l:VerticalLayout>
+							<m:Text text="Last Appointment: 34 days ago"/>
+							<m:Text text="Next Appointment: To Be Scheduled"/>
+						</l:VerticalLayout>
+					<!--</ObjectPageSubSection>-->
+					<!--<ObjectPageSubSection title="Limitations">-->
+						<l:VerticalLayout >
+							<m:Text text="He can't eat on his own since 04/21/2016."/>
+							<m:Text text="He can't shower alone since 12/08/2016."/>
+							<m:Text text="He can't dress himself since 01/02/2017."/>
+						</l:VerticalLayout>
+							</l:HorizontalLayout>
+					</l:VerticalLayout>
+					</ObjectPageSubSection>
+						<ObjectPageSubSection title="Physical Activities">
+					<l:VerticalLayout>
+									<m:Title text="Average of steps from the last 7 days" class="sapUiSmallMargin"/>
+									<m:FlexBox width="40rem" height="10rem" alignItems="Right" class="sapUiSmallMargin">
+										<m:items>
+											<chart:InteractiveLineChart>
+												<chart:points>
+													<chart:InteractiveLineChartPoint value="220" displayedValue="220 steps" label="1"/>
+													<chart:InteractiveLineChartPoint value="213" displayedValue="213 steps" label="2"/>
+													<chart:InteractiveLineChartPoint value="189" displayedValue="189 steps" label="3"/>
+													<chart:InteractiveLineChartPoint value="199" displayedValue="199 steps" label="4"/>
+													<chart:InteractiveLineChartPoint value="154" displayedValue="154 steps" label="5"/>
+													<chart:InteractiveLineChartPoint value="112" displayedValue="112 steps" label="6"/>
+													<chart:InteractiveLineChartPoint value="107" displayedValue="107 steps" label="7"/>
+												</chart:points>
+											</chart:InteractiveLineChart>
+										</m:items>
+									</m:FlexBox>
+								</l:VerticalLayout>
+					</ObjectPageSubSection>
+				</subSections>
+			</ObjectPageSection>
+			<ObjectPageSection title="Chatbot">
+				<subSections>
+					<ObjectPageSubSection title=" ">
+						<l:BlockLayout id="BlockLayout" background="{/selectedBackground}">
+							<l:BlockLayoutRow>
+								<l:BlockLayoutCell>
+									<m:FeedInput enabled="false" icon="/webapp/img/people/person_2.jpg" value="Question: {Feed>question}" showIcon="true"/>
+									<m:FeedInput icon="/webapp/img/people/doctor_1.jpg" showIcon="true"/>
+								</l:BlockLayoutCell>
+							</l:BlockLayoutRow>
+						</l:BlockLayout>
+					</ObjectPageSubSection>
+				</subSections>
+			</ObjectPageSection>
+		</sections>
+		<footer>
+			<m:OverflowToolbar>
+				<m:ToolbarSpacer/>
+				<m:Button type="Accept" text="Accept"/>
+				<m:Button type="Reject" text="Reject"/>
+			</m:OverflowToolbar>
+		</footer>
+	</ObjectPageLayout>
+</core:View>

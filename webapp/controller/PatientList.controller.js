@@ -10,6 +10,7 @@ sap.ui.define([
 		
 		oPatientModel: new JSONModel(),
 		oNotificationModel: new JSONModel(),
+		oPatientList: new JSONModel(),
 		sDestinationUrl : "eurocarebackend",
 		
 		onInit: function () {
@@ -114,6 +115,10 @@ sap.ui.define([
 		    return function(){
 		        that.fnLoadPatientFromServer(that);
 		    };
+		},
+	
+		handlePatientReport: function () {
+			sap.ui.getCore().byId("app").to("idPatientReport"); 
 		},
 		
 		handleNavButtonPress: function () {

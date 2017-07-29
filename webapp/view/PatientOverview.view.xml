@@ -78,7 +78,7 @@
 										<Title level="H2" class="ne-title" text="Chatbot" />
 										<FeedInput
 											enabled="false"	
-											icon="/webapp/img/people/irene.jpg"
+											icon="/webapp/img/people/person_2.jpg"
 											value="Question: {Feed>question}"
 											showIcon="true" />
 										<FeedInput
