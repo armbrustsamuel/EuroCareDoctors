@@ -7,7 +7,7 @@
 	displayBlock="true" xmlns="sap.m">
 	<App>
 		<pages>
-			<Page title="EuroCare" class="eurocare-background">
+			<Page title="EuroCare" class="eurocare-background" >
 				<content>
 					<TileContainer 
 						id="myTileContainer" 

@@ -1,9 +1,14 @@
-<core:View controllerName="EuroCareDoctor.controller.PatientReport" xmlns:core="sap.ui.core" xmlns="sap.uxap" xmlns:m="sap.m"
-	xmlns:html="http://www.w3.org/1999/xhtml" xmlns:l="sap.ui.layout" xmlns:chart="sap.suite.ui.microchart">
+<core:View controllerName="EuroCareDoctor.controller.PatientReport" 
+	xmlns:core="sap.ui.core" 
+	xmlns="sap.uxap" 
+	xmlns:m="sap.m"
+	xmlns:html="http://www.w3.org/1999/xhtml" 
+	xmlns:l="sap.ui.layout" 
+	xmlns:chart="sap.suite.ui.microchart">
 	<ObjectPageLayout enableLazyLoading="false" showTitleInHeaderContent="true" showEditHeaderButton="false"
 		editHeaderButtonPress="handleEditBtnPress">
 		<headerTitle>
-			<ObjectPageHeader objectImageURI="/webapp/img/people/person_4.jpg" objectTitle="Patient" objectImageShape="Circle" objectImageAlt="Patient"
+			<ObjectPageHeader objectImageURI="/webapp/img/people/person_5.jpg" objectTitle="Nicolás Martins Ferreira" objectImageShape="Circle" objectImageAlt="Nicolás Martins Ferreira"
 				isObjectIconAlwaysVisible="false" isObjectTitleAlwaysVisible="false" isObjectSubtitleAlwaysVisible="false">
 				<actions>
 					<ObjectPageHeaderActionButton icon="sap-icon://pull-down" text="show section" type="Emphasized"/>
@@ -12,7 +17,7 @@
 				</actions>
 				<breadCrumbsLinks>
 					<m:Link text="Patient List" press="handleNavButtonPress"/>
-					<m:Link text="Current Patient"/>
+					<m:Link text="Nicolás Martins Ferreira"/>
 				</breadCrumbsLinks>
 			</ObjectPageHeader>
 		</headerTitle>
@@ -30,11 +35,21 @@
 			<ObjectPageSection title="Personal Information">
 				<subSections>
 					<ObjectPageSubSection title=" ">
-						<m:Text text="Age: 73"/>
-						<m:Text text="Diagnosal date: 06/03/2014 (3 years)"/>
-						<m:Text text="Last Appointment: 34 days ago"/>
-						<m:Text text="Next Appointment: To Be Scheduled"/>
-						<m:Text text="Next Appointment: To Be Scheduled"/>
+						<l:HorizontalLayout>
+							<l:VerticalLayout class="sapUiContentPadding" width="100%">
+								<l:content>
+									<m:Text text="Age: 73"/>
+									<m:Text text="Diagnosal date: 06/03/2014 (3 years)"/>
+									<m:Text text="Last Appointment: 34 days ago"/>
+								</l:content>
+							</l:VerticalLayout>
+							<l:VerticalLayout class="sapUiContentPadding" width="100%">
+								<l:content>
+									<m:Text text="Next Appointment: To Be Scheduled"/>
+									<m:Text text="Next Appointment: To Be Scheduled"/>
+								</l:content>
+							</l:VerticalLayout>
+						</l:HorizontalLayout>
 					</ObjectPageSubSection>
 				</subSections>
 			</ObjectPageSection>
@@ -44,7 +59,7 @@
 						<l:HorizontalLayout>
 							<l:VerticalLayout>
 								<m:Title text="Last 7 days" textAlign="center" class="sapUiSmallMargin"/>
-								<m:FlexBox width="30rem" height="15rem" alignItems="Start" justifyContent="Center">
+								<m:FlexBox width="20rem" height="10rem" alignItems="Start" justifyContent="Center">
 									<m:items>
 										<chart:InteractiveDonutChart selectionChanged="onSelectionChanged" displayedSegments="4">
 											<chart:segments>
@@ -60,15 +75,15 @@
 							</l:VerticalLayout>
 							<l:VerticalLayout>
 								<m:Title text="Past Month" textAlign="center" class="sapUiSmallMargin"/>
-								<m:FlexBox width="30rem" height="15rem" alignItems="End" justifyContent="Center">
+								<m:FlexBox width="20rem" height="10rem" alignItems="End" justifyContent="Center">
 									<m:items>
 										<chart:InteractiveDonutChart selectionChanged="onSelectionChanged" displayedSegments="4" press="press">
 											<chart:segments>
-												<chart:InteractiveDonutChartSegment label="1" value="20.0" displayedValue="20.0%"></chart:InteractiveDonutChartSegment>
-												<chart:InteractiveDonutChartSegment label="2" value="25.0" displayedValue="25.0%"></chart:InteractiveDonutChartSegment>
-												<chart:InteractiveDonutChartSegment label="3" value="17.0" displayedValue="17.0%"></chart:InteractiveDonutChartSegment>
-												<chart:InteractiveDonutChartSegment label="4" value="22.5" displayedValue="22.5%"></chart:InteractiveDonutChartSegment>
-												<chart:InteractiveDonutChartSegment label="5" value="15.5" displayedValue="15.5%"></chart:InteractiveDonutChartSegment>
+												<chart:InteractiveDonutChartSegment label="1" value="20.0" displayedValue="23.0%"></chart:InteractiveDonutChartSegment>
+												<chart:InteractiveDonutChartSegment label="2" value="25.0" displayedValue="30.0%"></chart:InteractiveDonutChartSegment>
+												<chart:InteractiveDonutChartSegment label="3" value="17.0" displayedValue="9.0%"></chart:InteractiveDonutChartSegment>
+												<chart:InteractiveDonutChartSegment label="4" value="22.5" displayedValue="27.5%"></chart:InteractiveDonutChartSegment>
+												<chart:InteractiveDonutChartSegment label="5" value="15.5" displayedValue="10.5%"></chart:InteractiveDonutChartSegment>
 											</chart:segments>
 										</chart:InteractiveDonutChart>
 									</m:items>
@@ -80,84 +95,79 @@
 			</ObjectPageSection>
 			<ObjectPageSection title="Health Monitor">
 				<subSections>
-					<ObjectPageSubSection title="Findings">
-						<!--<l:VerticalLayout>-->
-						<l:HorizontalLayout >
-						<!--<l:VerticalLayout>-->
-						<!--		<m:Title text="Incidents/notes" textAlign="center" class="sapUiSmallMargin"/>-->
-						<!--		<m:FlexBox width="50rem" height="15rem" alignItems="Start" justifyContent="End">-->
-						<!--			<m:items>-->
-							<!--<m:Title text="Incidents/notes"/>-->
-							<!--<m:Text text="Fell."/>-->
-							<!--<m:Text text="Tried to run away."/>-->
-						<!--		<m:Text text="He can't eat on his own since 04/21/2016."/>-->
-						<!--	<m:Text text="He can't shower alone since 12/08/2016."/>-->
-						<!--	<m:Text text="He can't dress himself since 01/02/2017."/>-->
-						<!--		</m:items>-->
-						<!--		</m:FlexBox>-->
-						<!--</l:VerticalLayout>-->
-					<!--</ObjectPageSubSection>-->
-					<!--<ObjectPageSubSection title="Limitations">-->
-						<l:VerticalLayout >
-								<m:Title text="Incidents/Notes" textAlign="center" class="sapUiSmallMargin"/>
-								<m:FlexBox width="50rem" height="10rem" alignItems="Start" justifyContent="Start">
-									<m:items>
-							<m:Text text="He fell                               ."/>
-							<m:Text text="He tried to leave the house           ."/>
+			<!--		<ObjectPageSubSection title="Findings">-->
+			<!--			<blocks>-->
+							<!--<personal:PersonalBlockPart1 id="part1" columnLayout="1">-->
+			<!--					<l:VerticalLayout class="sapUiContentPadding" width="100%">-->
+			<!--						<m:Title text="Incidents/Notes" textAlign="center" class="sapUiSmallMargin"/>-->
+			<!--						<m:FlexBox width="50rem" height="10rem" alignItems="Start" justifyContent="Center">-->
+			<!--							<m:items>-->
+			<!--								<m:Text text="He fell."/>-->
+			<!--								<m:Text text="He tried to leave the house."/>-->
+			<!--							</m:items>-->
+			<!--						</m:FlexBox>-->
+			<!--					</l:VerticalLayout>-->
+							<!--</personal:PersonalBlockPart1>-->
+			<!--			</blocks>-->
+			<!--			<blocks>-->
+							<!--<personal:PersonalBlockPart1 id="part1" columnLayout="1">-->
+			<!--					<l:VerticalLayout class="sapUiContentPadding" width="100%">-->
+			<!--						<m:Title text="Limitations" textAlign="center" class="sapUiSmallMargin"/>-->
+			<!--						<m:FlexBox width="30rem" height="10rem" alignItems="End" justifyContent="Center">-->
+			<!--							<m:items>-->
+											<!--<m:Title text="Limitations"/>-->
+			<!--								<m:Text text="He can't eat on his own since 04/21/2016."/>-->
+			<!--								<m:Text text="He can't shower alone since 12/08/2016."/>-->
+			<!--								<m:Text text="He can't dress himself since 01/02/2017."/>-->
+			<!--							</m:items>-->
+			<!--						</m:FlexBox>-->
+			<!--					</l:VerticalLayout>-->
+							<!--</personal:PersonalBlockPart1>-->
+			<!--			</blocks>-->
+						<!--<l:HorizontalLayout >-->
 							
-								</m:items>
-								</m:FlexBox>
-						</l:VerticalLayout>
-						<m:Panel></m:Panel>
-						<l:VerticalLayout >
-								<m:Title text="Limitations" textAlign="center" class="sapUiSmallMargin"/>
-								<m:FlexBox width="30rem" height="10rem" alignItems="Start" justifyContent="End">
+						<!--</l:HorizontalLayout>-->
+			<!--		</ObjectPageSubSection>-->
+					<ObjectPageSubSection title="Physical Activities">
+						<l:HorizontalLayout
+							width="100%">
+							<l:VerticalLayout class="sapUiContentPadding" width="100%">
+								<m:Title text="Last week's average steps" class="sapUiSmallMargin"/>
+								<m:FlexBox width="30rem" height="15rem" alignItems="Start" justifyContent="Center">
 									<m:items>
-							<!--<m:Title text="Limitations"/>-->
-							<m:Text text="He can't eat on his own since 04/21/2016."/>
-							<m:Text text="He can't shower alone since 12/08/2016."/>
-							<m:Text text="He can't dress himself since 01/02/2017."/>
-								</m:items>
+										<chart:InteractiveLineChart>
+											<chart:points>
+												<chart:InteractiveLineChartPoint value="920" displayedValue="920 steps" label="6"/>
+												<chart:InteractiveLineChartPoint value="913" displayedValue="913 steps" label="5"/>
+												<chart:InteractiveLineChartPoint value="889" displayedValue="889 steps" label="4"/>
+												<chart:InteractiveLineChartPoint value="899" displayedValue="899 steps" label="3"/>
+												<chart:InteractiveLineChartPoint value="854" displayedValue="854 steps" label="2"/>
+												<chart:InteractiveLineChartPoint value="812" displayedValue="812 steps" label="1"/>
+											</chart:points>
+										</chart:InteractiveLineChart>
+									</m:items>
 								</m:FlexBox>
-						</l:VerticalLayout>
-							</l:HorizontalLayout>
-					<!--</l:VerticalLayout>-->
-					</ObjectPageSubSection>
-						<ObjectPageSubSection title="Physical Activities">
-						<l:VerticalLayout>
-									<m:Title text="Last week's average steps" class="sapUiSmallMargin"/>
-										<m:FlexBox width="30rem" height="15rem" alignItems="Start" justifyContent="Center">
-										<m:items>
-											<chart:InteractiveLineChart>
-												<chart:points>
-													<chart:InteractiveLineChartPoint value="920" displayedValue="920 steps" label="6"/>
-													<chart:InteractiveLineChartPoint value="913" displayedValue="913 steps" label="5"/>
-													<chart:InteractiveLineChartPoint value="889" displayedValue="889 steps" label="4"/>
-													<chart:InteractiveLineChartPoint value="899" displayedValue="899 steps" label="3"/>
-													<chart:InteractiveLineChartPoint value="854" displayedValue="854 steps" label="2"/>
-													<chart:InteractiveLineChartPoint value="812" displayedValue="812 steps" label="1"/>
-												</chart:points>
-											</chart:InteractiveLineChart>
-										</m:items>
-									</m:FlexBox>
-						</l:VerticalLayout>
-						<l:VerticalLayout>
-									<m:Title text="Weight history (Last 6 months)" class="sapUiSmallMargin"/>
-										<m:FlexBox width="30rem" height="15rem" alignItems="Start" justifyContent="Center">
-										<m:items>
-											<chart:InteractiveLineChart>
-												<chart:points>
-													<chart:InteractiveLineChartPoint value="90" displayedValue="90kgs" label="6"/>
-													<chart:InteractiveLineChartPoint value="83" displayedValue="83kgs" label="5"/>
-													<chart:InteractiveLineChartPoint value="83" displayedValue="83kgs" label="4"/>
-													<chart:InteractiveLineChartPoint value="72" displayedValue="72kgs" label="3"/>
-													<chart:InteractiveLineChartPoint value="65" displayedValue="65kgs" label="2"/>
-													<chart:InteractiveLineChartPoint value="58" displayedValue="58kgs" label="1"/>
-												</chart:points>
-											</chart:InteractiveLineChart>
-										</m:items>
-									</m:FlexBox>
-						</l:VerticalLayout>
+							</l:VerticalLayout>
+							<l:VerticalLayout>
+							</l:VerticalLayout>
+							<l:VerticalLayout>
+								<m:Title text="Weight history (Last 6 months)" class="sapUiSmallMargin"/>
+								<m:FlexBox width="30rem" height="15rem" alignItems="End" justifyContent="Center">
+									<m:items>
+										<chart:InteractiveLineChart>
+											<chart:points>
+												<chart:InteractiveLineChartPoint value="90" displayedValue="90kg" label="6"/>
+												<chart:InteractiveLineChartPoint value="83" displayedValue="83kg" label="5"/>
+												<chart:InteractiveLineChartPoint value="83" displayedValue="83kg" label="4"/>
+												<chart:InteractiveLineChartPoint value="72" displayedValue="72kg" label="3"/>
+												<chart:InteractiveLineChartPoint value="65" displayedValue="65kg" label="2"/>
+												<chart:InteractiveLineChartPoint value="58" displayedValue="58kg" label="1"/>
+											</chart:points>
+										</chart:InteractiveLineChart>
+									</m:items>
+								</m:FlexBox>
+							</l:VerticalLayout>
+						</l:HorizontalLayout>
 					</ObjectPageSubSection>
 				</subSections>
 			</ObjectPageSection>
@@ -167,8 +177,29 @@
 						<l:BlockLayout id="BlockLayout" background="{/selectedBackground}">
 							<l:BlockLayoutRow>
 								<l:BlockLayoutCell>
-									<m:FeedInput enabled="false" icon="/webapp/img/people/person_2.jpg" value="Question: {Feed>question}" showIcon="true"/>
-									<m:FeedInput icon="/webapp/img/people/doctor_1.jpg" showIcon="true"/>
+									<m:Panel>
+										<m:FlexBox
+											width="95%"
+											justifyContent="SpaceBetween"
+											alignItems="Center"	
+											items="{Feed>/feedList}"
+											wrap="Wrap">
+											<l:VerticalLayout visible="{= ${Feed>answered} === false ? true : false}">
+												<m:FeedListItem
+													sender="Question"
+													icon="/webapp/img/people/person_{= ${Feed>id} > 5 ? 99 : ${Feed>id}}.jpg"
+													iconPress="ondeletePressed"
+													iconDensityAware="false"
+													text="{Feed>question}"
+													convertLinksToAnchorTags="All"/>
+												<m:FeedInput 
+													icon="/webapp/img/people/doctor_2.jpg" 
+													showIcon="true" 
+													post="handlePostPressed"
+													placeholder="Post something here"/>
+											</l:VerticalLayout>
+										</m:FlexBox>
+									</m:Panel>
 								</l:BlockLayoutCell>
 							</l:BlockLayoutRow>
 						</l:BlockLayout>

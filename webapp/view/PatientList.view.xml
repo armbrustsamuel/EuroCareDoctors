@@ -31,11 +31,11 @@
 											<items>
 												<l:VerticalLayout>
 													<Image
+														press="handlePatientReport"
 														class="circular--square alert tile_card"
 														width="200px"
 														height="200px"
-														src="/webapp/img/people/person_5.jpg"
-														press="handlePatientReport"/>
+														src="/webapp/img/people/person_5.jpg"/>
 													<Text 
 														text="Name: Nicolas Martins Ferreira  "
 														textAlign="Center"/>
@@ -56,6 +56,15 @@
 										<Panel></Panel>
 									</l:VerticalLayout>
 									<l:VerticalLayout>
+										<Panel></Panel>
+									</l:VerticalLayout>
+									<l:VerticalLayout>
+										<Panel></Panel>
+									</l:VerticalLayout>
+									<l:VerticalLayout>
+										<Panel></Panel>
+									</l:VerticalLayout>
+									<l:VerticalLayout>
 										<List id="notificationList" items="{Notification>/notificationList}" class="sapContrast sapContrastPlus" >
 											<NotificationListItem
 												visible="{= ${Notification>seen} === false ? true : false}"
@@ -63,12 +72,12 @@
 												description="{Notification>message}"
 												showCloseButton="true"
 												unread="{Notification>seen}"
-												datetime="Date: {Notification>date} - {Notification>time}"
+												datetime="Date: 03/08/2017 - {Notification>time}"
 												priority="High"
 												close="onItemClose"
 												press="onListItemPress"
 												authorName="From: Irene"
-												authorPicture="/webapp/img/people/person_2.jpg">
+												authorPicture="/webapp/img/people/person_99.jpg">
 												<buttons>
 													<Button text="Ok" type="Accept" press="onAcceptPress" icon="sap-icon://accept"/>
 													<!--<Button text="Reject" type="Reject" press="onRejectPress" icon="sap-icon://sys-cancel"/>-->
@@ -95,7 +104,6 @@
 											<l:VerticalLayout>
 												<Image
 													class="circular--square tile_card"
-													press="handlePatientPressed"
 													width="170px"
 													height="170px"
 													src="/webapp/img/people/person_{Patient>userId}.jpg"/>
@@ -117,11 +125,16 @@
 				<footer>
 				    <OverflowToolbar >
 				        <ToolbarSpacer/>
-				        <Image
+				        <!--<Image-->
+            <!--		    	visible="true"-->
+            <!--		    	width="200px"-->
+            <!--		    	height="50px"-->
+            <!--		    	src="/webapp/img/eurofarma_logo.png"/>-->
+            			<Image
             		    	visible="true"
-            		    	width="200px"
-            		    	height="50px"
-            		    	src="/webapp/img/eurofarma_logo.png"/>
+            		    	width="80px"
+            		    	height="40px"
+            		    	src="/webapp/img/SAP_2011_logo.svg"/>
 				    </OverflowToolbar>
         		</footer>
 			</Page>

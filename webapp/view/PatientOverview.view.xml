@@ -82,7 +82,6 @@
 											value="Question: {Feed>question}"
 											showIcon="true" />
 										<FeedInput
-											icon="/webapp/img/people/doctor_1.jpg"
 											showIcon="true" />
 									</l:BlockLayoutCell>
 									<l:BlockLayoutCell>

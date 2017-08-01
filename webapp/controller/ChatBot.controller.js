@@ -58,35 +58,35 @@ sap.ui.define([
 		    this.oFeedMessage.setData({ 
 	            patientList : [
 					{
+						"id": 5,
+					    "question": "Também terei Alzheimer?",
+					    "answer": "Se há casos em sua família, você possui uma pré disposição para ter a doença também.",
+					    "answered": true
+					},{
 						"id":1,
-						"answerId":1,
-						"userId":2,
-						"message":"Como faço para aliviar a dor?",
-						"done":"false"
+						"question":"Como faço para aliviar a dor?",
+						"answer":"",
+						"answered": false
 					},{
 						"id":2,
-						"answerId":2,
-						"userId":2,
-						"message":"Qual a melhor forma de cuidar?",
-						"done":"false"
+						"question":"Qual a melhor forma de cuidar?",
+						"answer":"",
+						"answered": false
 					},{
 						"id":3,
-						"answerId":3,
-						"userId":2,
-						"message":"Como devo tratar meu familiar agora?",
-						"done":"false"
+						"question":"Como devo tratar meu familiar agora?",
+						"answer":"",
+						"answered": false
 					},{
 						"id":4,
-						"answerId":4,
-						"userId":2,
-						"message":"Também terei Alzheimer?",
-						"done":"true"
+						"question":"Também terei Alzheimer?",
+						"answer":"",
+						"answered": false
 					},{
-						"id":5,
-						"answerId":5,
-						"userId":2,
-						"message":"Para o que servem os remédios?",
-						"done":"true"
+						"id":6,
+						"question":"Para o que servem os remédios?",
+						"answer":"",
+						"answered": false
 					}
 				]
 	        });
@@ -95,11 +95,26 @@ sap.ui.define([
 		fnReloadQuestionFromServer: function(that){
 		    return function(){
 		        that.fnLoadFeedFromServer(that);
+		        that.oFeedMessage.refresh();
 		    };
 		},
 		
 		handleNavButtonPress: function () {
 			sap.ui.getCore().byId("app").back();
+		},
+		
+		ondeletePressed: function(evt) {
+			var that = this;
+			var sPath = evt.getSource().getBindingContext("Feed").getPath();
+			var question = this.getView().getModel("Feed").getProperty(sPath);
+			
+			jQuery.ajax(this.sDestinationUrl + "/question/" + question.id, {
+				dataType: "json",
+				method: "DELETE",
+				contentType: "application/json; charset=UTF-8",
+				success: that.fnReloadQuestionFromServer(that) 
+			});
+
 		},
 		
 		handlePostPressed: function (evt) {
@@ -108,30 +123,12 @@ sap.ui.define([
 			var question = this.getView().getModel("Feed").getProperty(sPath);
 			var updatedQuestion = {
 				id: question.id,
-				answerId: question.answerId,
-				userId: question.userId,
-				message: question.message,
-				done: true
-			};
-			
-			var doctorAnswer = {
-				id: question.id,
-				userId: 111,
-				questionId: question.id,
-				message: evt.getSource()._oTextArea._lastValue
+				question: question.question,
+				answer: evt.getSource()._oTextArea._lastValue,
+				answered: true
 			};
 			
 			this.getView().getModel("Feed").getProperty(sPath).done = true;
-			
-			// MessageToast.show(evt.getSource()._oTextArea._lastValue);
-			
-			jQuery.ajax(this.sDestinationUrl + "/doctorAnswer", {
-				dataType: "json",
-				data: JSON.stringify(doctorAnswer),
-				method: "POST",
-				contentType: "application/json; charset=UTF-8",
-				success: that.fnSuccessCallback(that)
-			});
 			
 			jQuery.ajax(this.sDestinationUrl + "/question/" + question.id, {
 				dataType: "json",
@@ -142,14 +139,6 @@ sap.ui.define([
 			});   
 			
 			this.oFeedMessage.refresh();
-		},
-		
-		handleAnsweredQuestionPressed: function (evt) {
-			var that = this;
-			var sPath = evt.getSource().getBindingContext("Feed").getPath();
-			var question = this.getView().getModel("Feed").getProperty(sPath);
-			
-			sap.ui.getCore().byId("app").to("idChatAnswer");
 		}
 
 	});
